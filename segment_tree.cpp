@@ -40,7 +40,7 @@ using namespace std;
 ///---------------------------------MAIN CODE---------------------------------//
 
 
-// Query in which we need to update a range of numbers
+// Updating a range of elements
 ll rangeUpdate(ll tree[], ll start, ll end, ll u_start, ll u_end, ll increment, ll index) {
     if(u_start > end || u_end < start) { // Index to be updated is Out of Bounds - No overlap
         return 0;
@@ -110,11 +110,12 @@ ll buildTree(ll a[], ll start, ll end, ll tree[], ll index) { // Bottom Up Recur
 //      New A[] : 1 13 4 -5 6 4
 // Range Update : 1 3 1
 //             -> Increments number in the index range 1 to 3 by 1
+//      New A[] : 11 4 3 -4 6 4
 
 // 6
 // 1 3 2 -5 6 4
 // 0 2
-// 1 10
+// 0 10
 // 1 3 1
 
 int main() {   
@@ -140,7 +141,7 @@ int main() {
     ll index, inc;
     cin >> index >> inc ;
     updateNode(tree, 0, n - 1, index, inc, 1); // increment element at index by inc
-    // A[]: 1 13, 2, -5, 6, 4
+    // A[]: 11, 3, 2, -5, 6, 4
     for(ll i = 1 ; i < 4*n + 1 ; i++) {  // Printing the tree (Array)
         cout << tree[i] << " ";
     }
@@ -149,7 +150,7 @@ int main() {
     ll u_start, u_end;
     cin >> u_start >> u_end >> inc;
     rangeUpdate(tree, 0, n - 1, u_start, u_end, inc, 1);
-    // A[]: 1 14, 3, -4, 6, 4
+    // A[]: 11, 4, 3, -4, 6, 4
     for(ll i = 1 ; i < 4*n + 1 ; i++) {  // Printing the tree (Array)
         cout << tree[i] << " ";
     }
