@@ -142,7 +142,7 @@ struct update
 	}
 	// Applying lazy values on nodes
 	void apply(node &x, const int32_t &tl, const int32_t &tr) { 
-		x.v += v;
+		x.v += (tr - tl + 1) * v;
 	}
 };
 
