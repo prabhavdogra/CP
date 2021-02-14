@@ -157,7 +157,7 @@ struct update
 // NOTE: All indexing is 0 based
 
 
-int32_t main() {
+int main() {
 	int n;
 	cin >> n;
 	segtree<node,update> s(n);
