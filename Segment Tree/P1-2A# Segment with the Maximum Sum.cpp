@@ -2,6 +2,9 @@
 using namespace std;
 #define ll              long long int
 
+// Step 1 - 2A
+// https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/A
+
 template<typename node,typename update>
 struct segtree
 {
