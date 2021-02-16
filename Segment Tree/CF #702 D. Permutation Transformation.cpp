@@ -34,7 +34,7 @@ struct segtree {
 		tr[v] = r;
 		if (l == r) {
 			t[v] = a[l];
-			t[v].id = l; // Stores index
+			t[v].id = l; // ****NOTE: Changed line to store index
 			return;
 		}
 		else {
