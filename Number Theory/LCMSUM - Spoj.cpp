@@ -2,6 +2,9 @@
 using namespace std;
 #define ll              long long int
 
+// LCM Sum - Spoj
+// https://www.spoj.com/problems/LCMSUM/
+
 const ll SZ = 1e6 + 5;
 vector<ll> phi(SZ + 1);
 void _phi() {
