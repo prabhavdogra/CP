@@ -45,8 +45,10 @@ void solve(ll n) {
             c++;
         }
         ll temp = 0;
-        if(c == 1) temp = x * (x - 1) + 1; // **Prevents overflow
-        else temp = (poww(x, 2 * c + 1) + 1)/(x + 1);
+        if(c == 1) // **Prevents overflow
+		temp = x * (x - 1) + 1; 
+        else 
+		temp = (poww(x, 2 * c + 1) + 1)/(x + 1);
         ans *= temp;
     }
     cout << ans << '\n';
