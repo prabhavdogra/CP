@@ -5,12 +5,12 @@ using namespace std;
 // Simple Sum - Codechef
 // https://www.codechef.com/problems/SMPLSUM
 
-ll poww(ll x,ll n) { 
+ll poww(ll x, ll n) { 
     if(n == 0) return 1 ; 
-    ll u = poww(x,n/2);
-    u=(u*u);
-    if(n % 2 == 1 ) 
-        u = ( u * x ) ;	
+    ll u = poww(x, n >> 1);
+    u = (u * u);
+    if(n&1) 
+        u = (u * x) ;	
     return u;
 }
 
