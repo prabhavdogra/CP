@@ -11,14 +11,14 @@
 #include <utility>
 #include <vector>
 
+#ifdef TERMINAL
+    #define DEBUG
+#endif
+
 namespace Debug {
-
-// #define COLOR
-// #define DEBUG
-
 // clang-format off
 // Color
-#ifdef COLOR    
+#ifdef TERMINAL    
     #define DEBUG_RED              "\x1B[0m\x1B[31m"
     #define DEBUG_GREEN            "\x1B[0m\x1B[32m"
     #define DEBUG_YELLOW           "\x1B[0m\x1B[33m"
@@ -34,8 +34,7 @@ namespace Debug {
     #define DEBUG_BOLD_CYAN        "\x1B[0m\x1B[36;1m"
     #define DEBUG_BOLD_WHITE       "\x1B[0m\x1B[37;1m"
     #define DEBUG_UNDERLINE        "\x1B[4m"
-#endif
-#ifndef COLOR
+#else
     #define DEBUG_RED              ""
     #define DEBUG_GREEN            ""
     #define DEBUG_YELLOW           ""
@@ -128,7 +127,9 @@ namespace Debug {
         }
     };
 
+
 #ifdef DEBUG
+    // Change debugging function name here
     #define d(args...)                                    \
         {                                                 \
             std::string _s = #args;                       \
@@ -142,20 +143,21 @@ namespace Debug {
 
     void location_stats(int line) {
         // Uncomment if you want to print line number
-        // std::cerr << DEBUG_LINE << "Line " << DEBUG_LINENUM << line << "\n" << DEBUG_RESET;
+        // std::cout << DEBUG_LINE << "Line " << DEBUG_LINENUM << line << "\n" << DEBUG_RESET;
     }
-    void clear_colours() { std::cerr << DEBUG_RESET; }
+    void clear_colours() { std::cout << DEBUG_RESET; }
     void err(std::istream_iterator<std::string> it) { std::ignore = it; }
     template <typename T, typename... Args>
     void err(std::istream_iterator<std::string> it, T a, Args... args) {
-        std::cerr << DEBUG_VAR << *it << " = ";
-        Writer<std::cerr>{}(a);
+        std::cout << DEBUG_VAR << *it << " = ";
+        Writer<std::cout>{}(a);
         err(++it, args...);
     }
 
     #define ASSERT(...) \
         if (not(__VA_ARGS__)) throw runtime_error(#__VA_ARGS__)
 #else
+    // Change debugging function name here
     #define d(...) 0
     #define ASSERT(...) 0
 #endif
