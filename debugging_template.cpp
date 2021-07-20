@@ -1,3 +1,6 @@
+// Author: Nor
+// Codeforces Profile: https://codeforces.com/profile/nor
+
 #include <algorithm>
 #include <iostream>
 #include <iterator>
