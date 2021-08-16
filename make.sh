@@ -1,9 +1,10 @@
-PEDANTIC_FLAGS=" -O2 -std=c++17 -Wl,--stack=268435456 -g -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fstack-protector -Wno-unused-parameter -Wno-unused-variable -Wno-variadic-macros -Wno-conversion "
+PEDANTIC_FLAGS=" -O2 -std=c++17 -Wl,--stack=268435456 -g -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fstack-protector "
+
+PROBLEMATIC_FLAGS_FIX=" -Wno-unused-parameter -Wno-unused-variable -Wno-variadic-macros -Wno-conversion "
 
 NORMAL_FLAGS=" -O2 -std=c++17 -Wl,--stack=268435456 -ftree-vectorize -fopt-info-vec -Wshadow "
-#NORMAL_FLAGS =-O2 -std=c++17 -ftree-vectorize -fopt-info-vec
 
-LOCAL_FLAGS="-Dprabhav_ -DDEBUG"
+LOCAL_FLAGS=" -Dprabhav_ -DDEBUG "
 
 FILE=$1
 FILE_CPP=$FILE".cpp"
@@ -17,6 +18,7 @@ FLAGS=$LOCAL_FLAGS
 
 if [ "$DEBUG_" = "D" ]; then
 	FLAGS+=$PEDANTIC_FLAGS
+    FLAGS+=$PROBLEMATIC_FLAGS_FIX
 else
 	FLAGS+=$NORMAL_FLAGS
 fi
