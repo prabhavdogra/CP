@@ -15,8 +15,7 @@ fi
 DEBUG_=${2:-"0"}
 FLAGS=$LOCAL_FLAGS
 
-if [ "$DEBUG_" = "D" ]
-then
+if [ "$DEBUG_" = "D" ]; then
 	FLAGS+=$PEDANTIC_FLAGS
 else
 	FLAGS+=$NORMAL_FLAGS
