@@ -1,0 +1,62 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Normal Build",
+            "command": "C:/MinGW/bin/g++.exe",
+            "args": [
+                "-Wl,--stack=268435456",
+                "--std",
+                "c++17",
+                "-O2",
+                "-Wshadow",
+                "-D_GLIBCXX_DEBUG",
+                "-Dprabhav_",
+                "-DDEBUG",
+                "${file}",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "&&",
+                ".\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: C:/MinGW/bin/g++.exe"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Debug Build",
+            "command": "C:/MinGW/bin/g++.exe",
+            "args": [
+                // PEDANTIC_FLAGS
+                "-O2", "-std=c++17", "-Wl,--stack=268435456", "-g", "-Wall", "-Wextra", "-pedantic", "-Wshadow", "-Wformat=2", "-Wfloat-equal", "-Wconversion", "-Wlogical-op", "-Wshift-overflow=2", "-Wduplicated-cond", "-Wcast-qual", "-Wcast-align", "-D_GLIBCXX_DEBUG", "-D_GLIBCXX_DEBUG_PEDANTIC", "-D_FORTIFY_SOURCE=2", "-fstack-protector",
+
+                // PROBLEMATIC_FLAGS_FIX
+                "-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-variadic-macros", "-Wno-conversion",
+
+                // LOCAL_FLAGS
+                "-Dprabhav_",
+                "-DDEBUG",
+                "${file}",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "&&",
+                ".\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: C:/MinGW/bin/g++.exe"
+        },
+    ],
+    "version": "2.0.0"
+}
