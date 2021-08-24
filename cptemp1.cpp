@@ -1,10 +1,10 @@
 #ifdef prabhav_
-	// #define TERMINAL
-	#include "Headers/debug.cpp"
+    // #define TERMINAL
+    #include "Headers/debug.cpp"
 #else
-	#define d(...) 0
-	#pragma GCC optimize("O3")
-	#pragma GCC target("avx,avx2,sse,sse2,sse3,sse4,popcnt,fma")
+    #define d(...) 0
+    #pragma GCC optimize("O3")
+    #pragma GCC target("avx,avx2,sse,sse2,sse3,sse4,popcnt,fma")
 #endif
 #include <bits/stdc++.h>
 using namespace std; 
@@ -34,21 +34,21 @@ int ceil(int a, int b) { return (a + b - 1) / b; }
 
 
 void prabhav() {
-	int n, temp, ans = 0;
-	cin >> n ;
-
+    int n, temp, ans = 0;
+    cin >> n ;
+    
 }
 
 signed main() {
-	ios::sync_with_stdio(0), cin.tie(0);
+    ios::sync_with_stdio(0), cin.tie(0);
 #ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
-	int T = 1;
-	cin >> T;
-	while (T--) {
-		prabhav();
-	}
-	return 0;
+    int T = 1;
+    cin >> T;
+    while (T--) {
+        prabhav();
+    }
+    return 0;
 }
