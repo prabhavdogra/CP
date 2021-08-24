@@ -1,129 +1,54 @@
-/*
-****************************
------- PRABHAV DOGRA -------
-----THINK AND THEN CODE!----
------ KEEP HUSTLING ! ------
-****************************
-*/
- 
+#ifdef prabhav_
+	// #define TERMINAL
+	#include "Headers/debug.cpp"
+#else
+	#define d(...) 0
+	#pragma GCC optimize("O3")
+	#pragma GCC target("avx,avx2,sse,sse2,sse3,sse4,popcnt,fma")
+#endif
 #include <bits/stdc++.h>
 using namespace std; 
- 
-#define FASTIO 			ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define TEST 			int Test ; cin >> Test;
-#define TEST2 			int Test = 1;
-#define INP(a, n) 		for(ll i=0;i<(ll)n;i++) cin>>a[i] ;
-#define INPA(a, n) 		ll a[n]; for(ll i=0;i<(ll)n;i++) cin>>a[i] ;
-#define INPV(a, n) 		ll TrT; for(int i=0;i<(ll)n;i++){cin>>TrT; a.push_back(TrT);}
-#define OUT(a, n) 		for(ll i=0;i<(ll)n;i++)cout<<a[i]<<" ";
-#define forp(i,a,b)    	for(ll i=a;i<(ll)b;i++)
-#define fore(i,a,b)     for(ll i=a;i<=(ll)b;i++)
-#define	fora(x)			for(auto &it: x)
-#define sz 				size()
-#define len 			length()
-#define beg				begin()
-#define en				end()
-#define all(x) 			x.beg,x.en
-#define ff				first
-#define ss				second
-#define pb				push_back
-#define pp 				pop_back
-#define lb 				lower_bound
-#define ub 				upper_bound
-#define N				'\n'
-#define YES(n) 			cout << ((n) ? "YES" : "NO") << "\n" ;
-#define Yes(n) 			cout << ((n) ? "Yes" : "No") << "\n" ;
-#define fix(f,n) 		fixed << setprecision(n) << f 
-#define M               1000000007
-#define PI 				3.1415926535897932384626433832795
- 
-#define TRACE
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
 
-#ifdef TRACE
-    #define d(...) __f(#__VA_ARGS__, __VA_ARGS__)
-    template <typename Arg1>
-        void __f(const char* name, Arg1&& arg1) { cout << name << " = " << arg1 << endl; }
-    template <typename Arg1, typename... Args>
-        void __f( const char* names, Arg1&& arg1, Args&&... args) {const char* comma = strchr(names + 1, ','); cout.write(names, comma - names) << " = " << arg1 << " "; __f(comma + 1, args...); }
-#else
-    #define d(...)
+#define int long long int
+#define vi vector<int>
+#define pii pair<int, int>
+#define ld long double
+#define forp(i, a, b) for (int i = (int)a; i < (int)b; i++)
+#define sz(a) (int)a.size()
+#define endl '\n'
+#define all(a) (a).begin(), (a).end()
+#define rall(a) (a).rbegin(), (a).rend()
+#define uniq(a) (a).erase(unique(all(a)), (a).end())
+#define fix(f, n) fixed << setprecision(n) << f
+#define setbits(x) __builtin_popcount(x)
+#define setbitsll(x) __builtin_popcountll(x)
+#define MSB(n) (32 - __builtin_clz(n))
+#define pb push_back
+#define ff first
+#define ss second
+constexpr int64_t INF = 2e18;
+constexpr int64_t M = 1e9 + 7;
+int ceil(int a, int b) { return (a + b - 1) / b; }
+
+
+void prabhav() {
+	int n, temp, ans = 0;
+	cin >> n ;
+
+}
+
+signed main() {
+	ios::sync_with_stdio(0), cin.tie(0);
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
- 
-typedef long long int ll;
-typedef long double ld;
-typedef unsigned long long ull;
-typedef vector<int> vi;
-typedef vector<ll> vll;
-typedef vector<vector<int>> vvi;
-typedef vector<vector<ll>> vvll;
-typedef vector<vector<ld>> vvld;
-typedef pair<ll, ll> pll;
-typedef vector<int> vi ;
-typedef vector<pair<int, int>> vpi;
-typedef vector<pair<ll,ll> > vpll;
- 
-ll modmul(ll a, ll b, ll c) {
- 
-  ll ans = 0;
-  ll y = a % c;
-  while (b) {
-    if (b % 2 == 1) {
-      (ans += y) %= c;
-    }
-    y = y * 2 % c;
-    b /= 2;
-  }
-  return ans;
-}
- 
-ll modpow(ll x,ll n,ll m) { 
- 
-    if(n == 0) return 1 % m ; 
-    ll u = modpow(x,n/2,m);
-    u=(u*u)%m;
-    if(n % 2 == 1 ) 
-        u = ((u % m)*(x % m)) % m ; 
-    return u;
-}
- 
-ll MAXN ;
-vector<int> isPrime;
-vector<ll> prime;
-vector<ll> SPF;
-void sieve() {
-    SPF.resize(MAXN) ;
-    isPrime.resize(MAXN, true) ;
-    prime.clear();
-    isPrime[0] = isPrime[1] = false;
-    for(int i = 2 ; i < MAXN ; i++) {
-        if(isPrime[i]) {
-            prime.push_back(i);
-            SPF[i] = i;
-        }
-        for(ll j = 0 ; j < prime.size() && i*prime[j] < MAXN && prime[j] <= SPF[i] ; j++) {
-            isPrime[i*prime[j]] = false;
-            SPF[i*prime[j]] = prime[j];
-        }
-    }
-}
- 
-//---------------------------------MAIN CODE---------------------------------//
- 
- 
-int main() 
-{	FASTIO
-    // #ifndef ONLINE_JUDGE
-        // freopen("input.txt", "r", stdin) ;
-        // freopen("output.txt", "w", stdout) ;
-    // #endif 
-    // MAXN = 1e8 ;
-    // sieve() ;
-    TEST
-    while(Test--)
-    {	
-        ll n, temp, ans = 0;
-        n = 1;
-        d(n, n, n);
-    }
-    return 0;
+	int T = 1;
+	cin >> T;
+	while (T--) {
+		prabhav();
+	}
+	return 0;
 }
