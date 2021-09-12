@@ -1,6 +1,7 @@
 -> Open GIT Bash
 -> Change Directory 
-cd ./Testing
+
+``cd ./Testing``
 
 -> Complete Code, Brute and Generator
 
