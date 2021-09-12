@@ -3,7 +3,7 @@
 
 ``cd ./Testing``
 
--> Complete Code, Brute and Generator
+-> Complete `code.cpp`, `brute.cpp` and `gen.cpp`
 
 -> Run command
 ``bash s.sh``
