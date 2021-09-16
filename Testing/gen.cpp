@@ -21,7 +21,7 @@ vector<int> generateArray(int n, int mn_element, int mx_element) {
 vector<int> generatePermutation(int n) {
     vector<int> randomPermutation(n);
     iota(randomPermutation.begin(), randomPermutation.end(), 1);
-    random_shuffle(randomPermutation.begin(), randomPermutation.end());
+    shuffle(permutation.begin(), permutation.end(), rng);
     for(auto it: randomPermutation)
         cout << it << " ";
     cout << '\n';
