@@ -87,7 +87,6 @@ signed main() {
     cin >> n;
     vector<int> a(n);
     distinctRangeQuery t(a);
-    t.getDistinct(l, r);    
-    cout << '\n';
+    t.getDistinct(l, r);
     return 0;
 }
