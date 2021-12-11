@@ -7,6 +7,7 @@ template<typename NODE, class S>
 struct mergeTree {
     int32_t sz;
     vector<NODE> t;
+    mergeTree() {}
     mergeTree(vector<NODE> &a) {
         sz = a.size();
         t.resize(4 * sz);
